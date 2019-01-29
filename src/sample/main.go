@@ -1,9 +1,9 @@
-package sample
+package main
 
 import (
+	"./search"
 	"log"
 	"os"
-	"sample/search"
 )
 
 func init() {
