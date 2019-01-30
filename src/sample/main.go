@@ -1,6 +1,7 @@
 package main
 
 import (
+	_"./matchers"
 	"./search"
 	"log"
 	"os"
