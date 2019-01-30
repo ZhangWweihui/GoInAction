@@ -5,7 +5,8 @@ import (
 	"os"
 )
 
-const dataFile = "data/data.json"
+//注意这里文件路径的写法
+const dataFile = "src/sample/data/data.json"
 
 //Feed包含了要处理的种子的信息
 type Feed struct {
