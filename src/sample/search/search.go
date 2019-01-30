@@ -17,6 +17,8 @@ func Run(searchTerm string) {
 		log.Fatal(err)
 	}
 
+	log.Printf("feeds length : %d\n", len(feeds))
+
 	//创建一个无缓冲的channel来接收要展示的匹配结果
 	results := make(chan *Result)
 
@@ -29,6 +31,7 @@ func Run(searchTerm string) {
 	//为每一个种子启动一个goroutine来查询结果
 	for _, feed := range feeds {
 		//根据种子的类型获取一个匹配器
+		log.Printf("feed type : %s \n", feed.Type)
 		matcher, exists := matchers[feed.Type]
 		if !exists {
 			matcher = matchers["default"]
@@ -36,8 +39,8 @@ func Run(searchTerm string) {
 
 		go func(matcher Matcher, feed *Feed) {
 			Match(matcher, feed, searchTerm, results)
+			waitGroup.Done()
 		}(matcher, feed)
-		waitGroup.Done()
 	}
 
 	//运行一个goroutine来监控是否所有的工作已完成

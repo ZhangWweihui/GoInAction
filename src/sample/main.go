@@ -1,7 +1,7 @@
 package main
 
 import (
-	_"./matchers"
+	_ "./matchers"
 	"./search"
 	"log"
 	"os"
@@ -12,5 +12,5 @@ func init() {
 }
 
 func main() {
-	search.Run("president")
+	search.Run("Human")
 }
