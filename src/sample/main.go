@@ -1,9 +1,10 @@
-package sample
+package main
 
 import (
+	_ "./matchers"
+	"./search"
 	"log"
 	"os"
-	"sample/search"
 )
 
 func init() {
@@ -11,5 +12,5 @@ func init() {
 }
 
 func main() {
-	search.Run("president")
+	search.Run("Human")
 }
