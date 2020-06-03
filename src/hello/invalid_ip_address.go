@@ -71,4 +71,10 @@ func arr1() {
 
 	fmt.Printf("arr nums len : %d, cap: %d, val:%v\n", len(nums), cap(nums), nums)
 	fmt.Printf("slice nums1 len : %d, cap: %d, val:%v\n", len(nums1), cap(nums1), nums1)
+
+	nums3 := nums1[7:cap(nums1)]
+	fmt.Printf("slice nums3 len : %d, cap: %d, val:%v\n", len(nums3), cap(nums3), nums3)
+
+	nums4 := nums3[:cap(nums3)]
+	fmt.Printf("slice nums4 len : %d, cap: %d, val:%v\n", len(nums4), cap(nums4), nums4)
 }
